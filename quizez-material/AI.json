@@ -1,0 +1,221 @@
+[
+    {
+        "numb": 1,
+        "question": "Artificial Intelligence is about?",
+        "answer": "Making a machine Intelligent",
+        "options": [
+            "Making a machine Intelligent",
+            "Playing a game on Computer",
+            "Programming on Machine with your Own Intelligence",
+            "Putting your intelligence in Machine"
+        ]
+    },
+    {
+        "numb": 2,
+        "question": "Who is known as the -Father of AI?",
+        "answer": "John McCarthy",
+        "options": [
+            "Allen Newell",
+            "Alan Turing",
+            "Fisher Ada",
+            "John McCarthy"
+        ]
+    },
+    {
+        "numb": 3,
+        "question": "A field of study that investigates the impact of individuals, groups, and structure on behaviour within organization is known as:",
+        "answer": "organizational behaviour",
+        "options": [
+            "psychology",
+            "organizational behaviour",
+            "social psychology",
+            "anthropology"
+        ]
+    },
+    {
+        "numb": 4,
+        "question": "Select the most appropriate situation for that a blind search can be used",
+        "answer": "Small Search Space",
+        "options": [
+            "Real-life situation",
+            "Complex game",
+            "Small Search Space",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 5,
+        "question": "Which of the following topics is generally considered to be outside the field of OB?",
+        "answer": "therapy",
+        "options": [
+            "therapy",
+            "employment turnover",
+            "job satisfaction",
+            "absenteeism"
+        ]
+    },
+    {
+        "numb": 6,
+        "question": "Among the given options, which search algorithm requires less memory?",
+        "answer": "Depth First Search",
+        "options": [
+            "Linear Search",
+            "Depth First Search",
+            "Breadth-First Search",
+            "Optimal Search"
+        ]
+    },
+    {
+        "numb": 7,
+        "question": "are defined as people who oversee the activities of others and who are responsible for attaining goals in organizations",
+        "answer": "Managers",
+        "options": [
+            "Apprentices",
+            "Interns",
+            "Secretaries",
+            "Managers"
+        ]
+    },
+    {
+        "numb": 8,
+        "question": "If a robot is able to change its own trajectory as per the external conditions, then the robot is considered as the",
+        "answer": "Intelligent",
+        "options": [
+            "Intelligent",
+            "Mobile",
+			"Non-Servo",
+			"Open Loop"
+        ]
+    },
+    {
+        "numb": 9,
+        "question": "As the instructions can deal with variable size operands we use ____________ to resolve this.",
+        "answer": "Size indicator mnemonic",
+        "options": [
+            "None of the mentioned",
+            "Size indicator mnemonic",
+            "Special assemblers",
+            "Delimiter"
+        ]
+    },
+    {
+        "numb": 10,
+        "question": "Which of the given language is not commonly used for AI?",
+        "answer": "Perl",
+        "options": [
+            "LISP",
+            "PROLOG",
+            "Perl",
+            "Python"
+        ]
+    },
+    {
+        "numb": 11,
+        "question": "A technique that was developed to determine whether a machine could or could not demonstrate the artificial intelligence known as the",
+        "answer": "Turing Test",
+        "options": [
+            "Boolean Algebra",
+            "Turing Test",
+            "Logarithm",
+            "Algorithm"
+        ]
+    },
+    {
+        "numb": 12,
+        "question": "The component of an Expert system is",
+        "answer": "All of the above",
+        "options": [
+            "Knowledge Base",
+            "Inference Engine",
+            "User Interface",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 13,
+        "question": "An AI agent perceives and acts upon the environment using_?",
+        "answer": "Both a and c",
+        "options": [
+            "Sensors",
+            "Perceiver",
+            "Actuators",
+            "Both a and c"
+        ]
+    },
+    {
+        "numb": 14,
+        "question": "Which rule is applied for the Simple reflex agent?",
+        "answer": "Condition-action rule",
+        "options": [
+            "Condition-action rule",
+            "Simple &Condition-action rule",
+            "Control Unit",
+            "None of the above"
+        ]
+    },
+    {
+        "numb": 15,
+        "question": "The PC register holds what?",
+        "answer": "The address for the next instruction",
+        "options": [
+            "The accumulated memory location",
+            "The instruction for the next instruction",
+            "The data for the next instruction",
+            "The address for the next instruction"
+        ]
+    },
+    {
+        "numb": 16,
+        "question": "Which of these is not a system utility program?",
+        "answer": "A graphics card driver",
+        "options": [
+            "Memory and CPU monitor",
+            "A graphics card driver",
+            "Defragmentation software",
+            "Diagnostic software in case of computer crash"
+        ]
+    },
+    {
+        "numb": 17,
+        "question": "Which agent deals with the happy and unhappy state?",
+        "answer": "Utility-based agent",
+        "options": [
+            "Compression",
+            "Model-based agent",
+            "Goal-based Agent",
+            "Defragmentation"
+        ]
+    },
+    {
+        "numb": 18,
+        "question": "Rational agent always does the right things",
+        "answer": "True",
+        "options": [
+            "false",
+            "True"
+        ]
+    },
+    {
+        "numb": 19,
+        "question": "Which AI technique enables the computers to understand the associations and relationships between objects and events?",
+        "answer": "Pattern Matching",
+        "options": [
+            "Relative Symbolism",
+            "Pattern Matching",
+            "Cognitive Science",
+            "Heuristic Processing"
+        ]
+    },
+    {
+        "numb": 20,
+        "question": "The exploration problem is where_?",
+        "answer": "Agent contains the knowledge of State and actions.",
+        "options": [
+            "Agent contains the knowledge of State and actions.",
+            "Agent does not contain the knowledge of State and actions.",
+            "Only actions are known to the agent.",
+            "None of the above"
+        ]
+    }
+]
+    

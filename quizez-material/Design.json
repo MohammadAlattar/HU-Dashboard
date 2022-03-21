@@ -1,0 +1,222 @@
+[
+    {
+        "numb": 1,
+        "question": "What is the first step in the software development lifecycle?",
+        "answer": "Preliminary Investigation and Analysis",
+        "options": [
+            "System Design",
+            "Coding",
+            "System Testing",
+            "Preliminary Investigation and Analysis"
+        ]
+    },
+    {
+        "numb": 2,
+        "question": "What does the study of an existing system refer to?",
+        "answer": "System Analysis",
+        "options": [
+            "Details of DFD",
+            "Feasibility Study",
+            "System Analysis",
+            "System Planning"
+        ]
+    },
+    {
+        "numb": 3,
+        "question": "Which of the following is involved in the system planning and designing phase of the Software Development Life Cycle (SDLC",
+        "answer": "All of the above",
+        "options": [
+            "Sizing",
+            "Parallel run",
+            "Specification freeze",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 4,
+        "question": "What does RAD stand for?",
+        "answer": "Rapid Application Development",
+        "options": [
+            "Rapid Application Development",
+            "Rapid Application Document",
+            "Relative Application Development",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 5,
+        "question": "Which of the following prototypes does not associated with Prototyping Model?",
+        "answer": "Diagonal Prototype",
+        "options": [
+            "Domain Diagram",
+            "Diagonal Prototype",
+            "Horizontal Prototype",
+            "Sequence Diagram"
+        ]
+    },
+    {
+        "numb": 6,
+        "question": "Interaction Diagram is a combined term for",
+        "answer": "Sequence Diagram + Collaboration Diagram",
+        "options": [
+            "Activity Diagram + State Chart Diagram",
+            "Sequence Diagram + Collaboration Diagram",
+            "Deployment Diagram + Collaboration Diagram",
+            "None of the mentioned"
+        ]
+    },
+    {
+        "numb": 7,
+        "question": "The major drawback of RAD model is __",
+        "answer": "Both (a) & (c)",
+        "options": [
+            "It requires highly skilled developers/designers.",
+            "It necessitates customer feedbacks.",
+            "It increases the component reusability.",
+            "Both (a) & (c)"
+        ]
+    },
+    {
+        "numb": 8,
+        "question": "Which of the following diagram is time oriented?",
+        "answer": "Sequence",
+        "options": [
+            "Collaboration",
+            "Activity",
+			"Sequence",
+			"None of the mentioned"
+        ]
+    },
+    {
+        "numb": 9,
+        "question": "As the instructions can deal with variable size operands we use ____________ to resolve this.",
+        "answer": "Size indicator mnemonic",
+        "options": [
+            "None of the mentioned",
+            "Size indicator mnemonic",
+            "Special assemblers",
+            "Delimiter"
+        ]
+    },
+    {
+        "numb": 10,
+        "question": "How many diagrams are here in Unified Modelling Language?",
+        "answer": "nine",
+        "options": [
+            "eight",
+            "nine",
+            "seven",
+            "six"
+        ]
+    },
+    {
+        "numb": 11,
+        "question": "Which of the following does not relate to Evolutionary Process Model?",
+        "answer": "All of the above",
+        "options": [
+            "Incremental Model",
+            "Concurrent Development Model",
+            "WINWIN Spiral Model",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 12,
+        "question": "who consider diagrams as a type of Class diagram, component diagram, object diagram, and deployment diagram?",
+        "answer": "All of the above",
+        "options": [
+            "structural",
+            "behavioral",
+            "non-behavioral",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 13,
+        "question": "What is the major drawback of the Spiral Model?",
+        "answer": "Doesn't work well for smaller projects",
+        "options": [
+            "Higher amount of risk analysis",
+            "Strong approval and documentation control",
+            "Additional functionalities are added later on",
+            "Doesn't work well for smaller projects"
+        ]
+    },
+    {
+        "numb": 14,
+        "question": ".__________ represented by In UML diagrams, relationship between component parts and object.",
+        "answer": "All of the above",
+        "options": [
+            "Requirements",
+            "Development team & users",
+            "Project type & associated risk",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 15,
+        "question": "Model selection is based on _",
+        "answer": "The address for the next instruction",
+        "options": [
+            "The accumulated memory location",
+            "The instruction for the next instruction",
+            "The data for the next instruction",
+            "The address for the next instruction"
+        ]
+    },
+    {
+        "numb": 16,
+        "question": "which type they considered Activity diagram, use case diagram, collaboration diagram, and sequence diagram?",
+        "answer": "behavioral",
+        "options": [
+            "structural",
+            "non-structural",
+            "non-behavioral",
+            "behavioral"
+        ]
+    },
+    {
+        "numb": 17,
+        "question": "Which of the following models doesn't necessitate defining requirements at the earliest in the lifecycle?",
+        "answer": "Spiral & Prototyping",
+        "options": [
+            "Compression",
+            "Prototyping & Waterfall",
+            "Spiral & RAD",
+            "Spiral & Prototyping"
+        ]
+    },
+    {
+        "numb": 18,
+        "question": "simple name in UML Class and objects consist of __________.",
+        "answer": "All of the mentioned",
+        "options": [
+            "Letters",
+			"Digits",
+			"Punctuation Characters",
+            "All of the mentioned"
+        ]
+    },
+    {
+        "numb": 19,
+        "question": "which of these abstractions class consist?",
+        "answer": "All of the mentioned",
+        "options": [
+            "Attributes",
+            "Operations",
+            "Set of the objects",
+            "All of the mentioned"
+        ]
+    },
+    {
+        "numb": 20,
+        "question": "which of the following attribute is a data item held by?",
+        "answer": "All of the mentioned",
+        "options": [
+            "Class",
+            "Object",
+            "All of the mentioned",
+            "None of the above"
+        ]
+    }
+]

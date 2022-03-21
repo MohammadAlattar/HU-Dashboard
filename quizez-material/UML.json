@@ -1,0 +1,223 @@
+[
+    {
+        "numb": 1,
+        "question": "Which of the following UML diagrams has a static view?",
+        "answer": "Use case",
+        "options": [
+            "Collaboration",
+            "Use case",
+            "State chart",
+            "Activity"
+        ]
+    },
+    {
+        "numb": 2,
+        "question": "What type of core-relationship is represented by the symbol in the figure below?",
+        "answer": "Aggregation",
+        "options": [
+            "Dependency",
+            "Association",
+            "Aggregation",
+            "Generalization"
+        ]
+    },
+    {
+        "numb": 3,
+        "question": "Which core element of UML is being shown in the figure?",
+        "answer": "Interface",
+        "options": [
+            "Node",
+            "Class",
+            "Component",
+            "Interface"
+        ]
+    },
+    {
+        "numb": 4,
+        "question": "Select the most appropriate situation for that a blind search can be used",
+        "answer": "Small Search Space",
+        "options": [
+            "Real-life situation",
+            "Complex game",
+            "Small Search Space",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 5,
+        "question": "Which diagram in UML shows a complete or partial view of the structure of a modeled system at a specific time?",
+        "answer": "Object Diagram",
+        "options": [
+            "Object Diagram",
+            "Class Diagram",
+            "Collaboration Diagram",
+            "Sequence Diagram"
+        ]
+    },
+    {
+        "numb": 6,
+        "question": "Interaction Diagram is a combined term for",
+        "answer": "Sequence Diagram + Collaboration Diagram",
+        "options": [
+            "Activity Diagram + State Chart Diagram",
+            "Sequence Diagram + Collaboration Diagram",
+            "Deployment Diagram + Collaboration Diagram",
+            "None of the mentioned"
+        ]
+    },
+    {
+        "numb": 7,
+        "question": "are defined as people who oversee the activities of others and who are responsible for attaining goals in organizations",
+        "answer": "Managers",
+        "options": [
+            "Apprentices",
+            "Interns",
+            "Secretaries",
+            "Managers"
+        ]
+    },
+    {
+        "numb": 8,
+        "question": "Which of the following diagram is time oriented?",
+        "answer": "Sequence",
+        "options": [
+            "Collaboration",
+            "Activity",
+			"Sequence",
+			"None of the mentioned"
+        ]
+    },
+    {
+        "numb": 9,
+        "question": "As the instructions can deal with variable size operands we use ____________ to resolve this.",
+        "answer": "Size indicator mnemonic",
+        "options": [
+            "None of the mentioned",
+            "Size indicator mnemonic",
+            "Special assemblers",
+            "Delimiter"
+        ]
+    },
+    {
+        "numb": 10,
+        "question": "How many diagrams are here in Unified Modelling Language?",
+        "answer": "nine",
+        "options": [
+            "eight",
+            "nine",
+            "seven",
+            "six"
+        ]
+    },
+    {
+        "numb": 11,
+        "question": "A technique that was developed to determine whether a machine could or could not demonstrate the artificial intelligence known as the",
+        "answer": "Turing Test",
+        "options": [
+            "Boolean Algebra",
+            "Turing Test",
+            "Logarithm",
+            "Algorithm"
+        ]
+    },
+    {
+        "numb": 12,
+        "question": "who consider diagrams as a type of Class diagram, component diagram, object diagram, and deployment diagram?",
+        "answer": "All of the above",
+        "options": [
+            "structural",
+            "behavioral",
+            "non-behavioral",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 13,
+        "question": "An AI agent perceives and acts upon the environment using_?",
+        "answer": "Both a and c",
+        "options": [
+            "Sensors",
+            "Perceiver",
+            "Actuators",
+            "Both a and c"
+        ]
+    },
+    {
+        "numb": 14,
+        "question": ".__________ represented by In UML diagrams, relationship between component parts and object.",
+        "answer": "aggregation",
+        "options": [
+            "ordination",
+            "aggregation",
+            "increment",
+            "None of the above"
+        ]
+    },
+    {
+        "numb": 15,
+        "question": "The PC register holds what?",
+        "answer": "The address for the next instruction",
+        "options": [
+            "The accumulated memory location",
+            "The instruction for the next instruction",
+            "The data for the next instruction",
+            "The address for the next instruction"
+        ]
+    },
+    {
+        "numb": 16,
+        "question": "which type they considered Activity diagram, use case diagram, collaboration diagram, and sequence diagram?",
+        "answer": "behavioral",
+        "options": [
+            "structural",
+            "non-structural",
+            "non-behavioral",
+            "behavioral"
+        ]
+    },
+    {
+        "numb": 17,
+        "question": "Which agent deals with the happy and unhappy state?",
+        "answer": "Utility-based agent",
+        "options": [
+            "Compression",
+            "Model-based agent",
+            "Goal-based Agent",
+            "Defragmentation"
+        ]
+    },
+    {
+        "numb": 18,
+        "question": "simple name in UML Class and objects consist of __________.",
+        "answer": "All of the mentioned",
+        "options": [
+            "Letters",
+			"Digits",
+			"Punctuation Characters",
+            "All of the mentioned"
+        ]
+    },
+    {
+        "numb": 19,
+        "question": "which of these abstractions class consist?",
+        "answer": "All of the mentioned",
+        "options": [
+            "Attributes",
+            "Operations",
+            "Set of the objects",
+            "All of the mentioned"
+        ]
+    },
+    {
+        "numb": 20,
+        "question": "which of the following attribute is a data item held by?",
+        "answer": "All of the mentioned",
+        "options": [
+            "Class",
+            "Object",
+            "All of the mentioned",
+            "None of the above"
+        ]
+    }
+]
+    

@@ -1,0 +1,332 @@
+[
+    {
+        "numb": 1,
+        "question": " Which methodology is used to performed Maintenance testing?",
+        "answer": "Breadth test and depth test",
+        "options": [
+            "Breadth test and depth test",
+            "Confirmation testing",
+            "Retesting",
+            "Sanity testing"
+        ]
+    },
+    {
+        "numb": 2,
+        "question": " Which of the following is not part of the Test document?",
+        "answer": "Project Initiation Note [PIN]",
+        "options": [
+            "Test Case",
+            "Requirements Traceability Matrix [RTM]",
+            "Test strategy",
+            "Project Initiation Note [PIN]"
+        ]
+    },
+    {
+        "numb": 3,
+        "question": "Which term is used to define testing?",
+        "answer": "Evaluating deliverable to find errors",
+        "options": [
+            "Evaluating deliverable to find errors",
+            "Finding broken code",
+            "A stage of all projects",
+            "None of the above"
+        ]
+    },
+    {
+        "numb": 4,
+        "question": "Which of the following is not a valid phase of SDLC (Software Development Life Cycle)?",
+        "answer": "Testing closure",
+        "options": [
+            "Testing Phase",
+            "Requirement Phase",
+            "Deployment phase",
+            "Testing closure"
+        ]
+    },
+    {
+        "numb": 5,
+        "question": "Which of the following testing is also known as white-box testing?",
+        "answer": "Structural testing",
+        "options": [
+            "Structural testing",
+            "Error guessing technique",
+            "Design based testing",
+            "None of the above"
+        ]
+    },
+    {
+        "numb": 6,
+        "question": "Which of the following testing is related to the boundary value analysis?",
+        "answer": "Black box testing",
+        "options": [
+            "White box and black box testing",
+            "White-box testing",
+            "Black box testing",
+            "None of the above"
+        ]
+    },
+    {
+        "numb": 7,
+        "question": "Functional testing is a ------?",
+        "answer": "Test type",
+        "options": [
+            "Test design technique",
+            "Test level",
+            "SDLC Model",
+            "Test type"
+        ]
+    },
+    {
+        "numb": 8,
+        "question": "What are the different levels of Testing?",
+        "answer": "All of the above",
+        "options": [
+            "Unit testing",
+            "Integration testing",
+            "System testing",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 9,
+        "question": " Which of the following is not a part of STLC (Software Testing Life Cycle)?",
+        "answer": "Requirement Gathering",
+        "options": [
+            "Testing Planning",
+            "Requirement Gathering",
+            "Test Design",
+            "Testing closure"
+        ]
+    },
+    {
+        "numb": 10,
+        "question": "Sanity testing is a ------?",
+        "answer": "Test Execution Level",
+        "options": [
+            "Test type",
+            "Test Execution Level",
+            "Test Level",
+            "Test design technique"
+        ]
+    },
+    {
+        "numb": 11,
+        "question": "White box testing techniques are?",
+        "answer": "All of the above",
+        "options": [
+            "Statement coverage testing",
+            "Decision coverage testing",
+            "Data flow testing",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 12,
+        "question": "In which environment we can performed the Alpha testing?",
+        "answer": "Developer's end",
+        "options": [
+            "User's end",
+            "Developer's end",
+            "User's and developer's end",
+            "None of the above"
+        ]
+    },
+    {
+        "numb": 13,
+        "question": "Which of the below is not a part of the Test Plan?",
+        "answer": "Incident reports",
+        "options": [
+            "Schedule",
+            "Risk",
+            "Incident reports ",
+            "Entry and exit criteria"
+        ]
+    },
+    {
+        "numb": 14,
+        "question": " What is the key objective of Integration testing?",
+        "answer": "Interface Errors",
+        "options": [
+            "Design Errors",
+            "Interface Errors",
+            "Procedure Errors",
+            "None of the mentioned"
+        ]
+    },
+    {
+        "numb": 15,
+        "question": "Does the customer get a 100% bug-free product?",
+        "answer": "The testing team is not good",
+        "options": [
+            "Product is old",
+            "Developers are super",
+            "The testing team is not good",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 16,
+        "question": "Cyclomatic complexity is?",
+        "answer": "White-box testing",
+        "options": [
+            "White-box testing",
+            "Black box testing",
+            "Grey box testing",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 17,
+        "question": "Which of the following is not part of the Test type?",
+        "answer": "Statement testing",
+        "options": [
+            "Function testing",
+            "System testing",
+            "Statement testing",
+            "Database testing"
+        ]
+    },
+    {
+        "numb": 18,
+        "question": " Which Test Document is used to define the Exit Criteria of Testing?",
+        "answer": "Test Plan",
+        "options": [
+            "Defect Report",
+            "Test Summary Report",
+            "Test Case",
+            "Test Plan"
+        ]
+    },
+    {
+        "numb": 19,
+        "question": "Which testing technique is used for usability testing?",
+        "answer": "Black Box testing",
+        "options": [
+            "White-box testing",
+            "Grey box testing",
+            "Black Box testing",
+            "Combination of all"
+        ]
+    },
+    {
+        "numb": 20,
+        "question": "Which is not the right approach of Incremental testing approach?",
+        "answer": "Big bang approach",
+        "options": [
+            "Big bang approach",
+            "Top-down approach",
+            "Functional incrimination",
+            "Bottom-up approach"
+        ]
+    },
+    {
+        "numb": 21,
+        "question": "In which environment we can performed the Beta testing?",
+        "answer": "User's end",
+        "options": [
+            "User's and developer's end",
+            "Developer's end",
+            "User's end",
+            "None of the above"
+        ]
+    },
+    {
+        "numb": 22,
+        "question": "What is error guessing in software testing?",
+        "answer": "est case design/ data management techniques",
+        "options": [
+            "Test control management techniques",
+            "Test verification techniques",
+            " Test execution techniques  ",
+            "est case design/ data management techniques"
+        ]
+    },
+    {
+        "numb": 23,
+        "question": "After which phase, we can proceed to the white box testing?",
+        "answer": "After the coding phase",
+        "options": [
+            "After the coding phase",
+            "After designing phase",
+            "After SRS creation",
+            "After the installation phase"
+        ]
+    },
+    {
+        "numb": 24,
+        "question": "Which of the following is not another name of white box testing?",
+        "answer": "Behavioral testing",
+        "options": [
+            "Structural testing",
+            "Behavioral testing",
+            "Glass box testing",
+            "None of the mentioned"
+        ]
+    },
+    {
+        "numb": 25,
+        "question": "The test levels are performed in which of the following order?",
+        "answer": "It is based on the nature of the project",
+        "options": [
+            "Unit, Integration, System, Acceptance",
+            "It is based on the nature of the project",
+            "Unit, Integration, Acceptance, System",
+            "Unit, System, Integration, Acceptance"
+        ]
+    },
+    {
+        "numb": 26,
+        "question": "Define the term failure?",
+        "answer": "Its departure from specified behavior",
+        "options": [
+            "A human action that produces an incorrect result.",
+            "Its departure from specified behavior",
+            "Found in the software; the result of an error.",
+            "It is procedure or data definition in a computer database."
+        ]
+    },
+    {
+        "numb": 27,
+        "question": "Which of the below testing is executed without documentation and planning is known as?",
+        "answer": "Adhoc Testing",
+        "options": [
+            "Regression Testing",
+            "Adhoc Testing",
+            "Unit Testing",
+            "None of the above"
+        ]
+    },
+    {
+        "numb": 28,
+        "question": "Which of the below testing is related to Non-functional testing?",
+        "answer": "Performance Testing",
+        "options": [
+            "Unit Testing",
+            "Black-box Testing",
+            "Performance Testing",
+            "None of the above"
+        ]
+    },
+    {
+        "numb": 29,
+        "question": "Which of the below testing is related to black-box testing?",
+        "answer": "Boundary value analysis",
+        "options": [
+            "Boundary value analysis",
+            "Code path analysis",
+            "Basic path testing",
+            "None of the above"
+        ]
+    },
+    {
+        "numb": 30,
+        "question": " -------- testing is used to check the code?",
+        "answer": "White-box testing",
+        "options": [
+            "Grey box testing",
+            "Black box testing",
+            "White-box testing",
+            "Red box testing"
+        ]
+    }
+]

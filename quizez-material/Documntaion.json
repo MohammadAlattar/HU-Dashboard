@@ -1,0 +1,223 @@
+[
+    {
+        "numb": 1,
+        "question": " STD stands for ____________",
+        "answer": "Software Test Documents",
+        "options": [
+            "Software Test Documents",
+            "System Test Documents",
+            "Software Traced Documents",
+            "System Traced Documents"
+        ]
+    },
+    {
+        "numb": 2,
+        "question": "The SRS describes what the system should do with words and figures.",
+        "answer": "True",
+        "options": [
+            "True",
+			"False"
+            
+            
+        ]
+    },
+    {
+        "numb": 3,
+        "question": "_______ is part of user documentation.",
+        "answer": "Installation guide",
+        "options": [
+            "Code comment",
+            "Parallel run",
+            "Installation guide",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 4,
+        "question": "The process of maintaining a record of project development and maintenance.",
+        "answer": "Process documentation",
+        "options": [
+            "System documentation",
+            "User documentation",
+            "Product documentation",
+            "Process documentation"
+        ]
+    },
+    {
+        "numb": 5,
+        "question": "This describes the objectives of a product and set out the constraints.",
+        "answer": "SDP",
+        "options": [
+            "SDS",
+            "SDP",
+            "SDD",
+            "DFS"
+        ]
+    },
+    {
+        "numb": 6,
+        "question": "____________ provide the detailed, specific application being developed.",
+        "answer": "Appendices",
+        "options": [
+            "System models",
+            "Appendices",
+            "Index",
+            "None of the mentioned"
+        ]
+    },
+    {
+        "numb": 7,
+        "question": "Which of the following should describe the technical terms used in the document?",
+        "answer": "glossary)",
+        "options": [
+            "system architecture",
+            "user requirements",
+            "index",
+            "glossary"
+        ]
+    },
+    {
+        "numb": 8,
+        "question": "The services provided for the user are described in which section?",
+        "answer": "User requirements",
+        "options": [
+            "Collaboration",
+            "Appendices",
+			"User requirements",
+			"None of the mentioned"
+        ]
+    },
+    {
+        "numb": 9,
+        "question": " ______________ architecture provides a high-level overview of the anticipated system architecture.",
+        "answer": "Size indicator mnemonic",
+        "options": [
+            "System",
+            "User",
+            "Test",
+            "Delimiter"
+        ]
+    },
+    {
+        "numb": 10,
+        "question": "How many diagrams are here in Unified Modelling Language?",
+        "answer": "nine",
+        "options": [
+            "eight",
+            "nine",
+            "seven",
+            "six"
+        ]
+    },
+    {
+        "numb": 11,
+        "question": "Which of the following does not relate to Evolutionary Process Model?",
+        "answer": "All of the above",
+        "options": [
+            "Incremental Model",
+            "Concurrent Development Model",
+            "WINWIN Spiral Model",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 12,
+        "question": "who consider diagrams as a type of Class diagram, component diagram, object diagram, and deployment diagram?",
+        "answer": "All of the above",
+        "options": [
+            "structural",
+            "behavioral",
+            "non-behavioral",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 13,
+        "question": "What is the major drawback of the Spiral Model?",
+        "answer": "Doesn't work well for smaller projects",
+        "options": [
+            "Higher amount of risk analysis",
+            "Strong approval and documentation control",
+            "Additional functionalities are added later on",
+            "Doesn't work well for smaller projects"
+        ]
+    },
+    {
+        "numb": 14,
+        "question": ".__________ represented by In UML diagrams, relationship between component parts and object.",
+        "answer": "All of the above",
+        "options": [
+            "Requirements",
+            "Development team & users",
+            "Project type & associated risk",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 15,
+        "question": "Model selection is based on _",
+        "answer": "The address for the next instruction",
+        "options": [
+            "The accumulated memory location",
+            "The instruction for the next instruction",
+            "The data for the next instruction",
+            "The address for the next instruction"
+        ]
+    },
+    {
+        "numb": 16,
+        "question": "which type they considered Activity diagram, use case diagram, collaboration diagram, and sequence diagram?",
+        "answer": "behavioral",
+        "options": [
+            "structural",
+            "non-structural",
+            "non-behavioral",
+            "behavioral"
+        ]
+    },
+    {
+        "numb": 17,
+        "question": "Which of the following models doesn't necessitate defining requirements at the earliest in the lifecycle?",
+        "answer": "Spiral & Prototyping",
+        "options": [
+            "Compression",
+            "Prototyping & Waterfall",
+            "Spiral & RAD",
+            "Spiral & Prototyping"
+        ]
+    },
+    {
+        "numb": 18,
+        "question": "simple name in UML Class and objects consist of __________.",
+        "answer": "All of the mentioned",
+        "options": [
+            "Letters",
+			"Digits",
+			"Punctuation Characters",
+            "All of the mentioned"
+        ]
+    },
+    {
+        "numb": 19,
+        "question": "which of these abstractions class consist?",
+        "answer": "All of the mentioned",
+        "options": [
+            "Attributes",
+            "Operations",
+            "Set of the objects",
+            "All of the mentioned"
+        ]
+    },
+    {
+        "numb": 20,
+        "question": "which of the following attribute is a data item held by?",
+        "answer": "All of the mentioned",
+        "options": [
+            "Class",
+            "Object",
+            "All of the mentioned",
+            "None of the above"
+        ]
+    }
+]
+    

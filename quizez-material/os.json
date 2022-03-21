@@ -1,0 +1,318 @@
+[
+    {
+        "numb": 1,
+        "question": " Software is a series of ____________ that tells a computer what tasks to perform and how to perform them ? ",
+        "answer": "instruction",
+        "options": [
+            "instruction",
+            "data",
+            "information",
+            "utility"
+        ]
+    },
+    {
+        "numb": 2,
+        "question": "________________programs that control or maintain the operations of the computer and its devices ?",
+        "answer": "System Software",
+        "options": [
+            "Software",
+            "Application software",
+            "Utility program",
+            "System Software"
+        ]
+    },
+    {
+        "numb": 3,
+        "question": "Function of system software is to serve as the _________ between the user, the application software, and the computer’s hardware?",
+        "answer": "interface",
+        "options": [
+            "application",
+            "program",
+            "server",
+            "interface"
+        ]
+    },
+    {
+        "numb": 4,
+        "question": " ____________a set of programs containing instructions that work together to coordinate all the activities among computer hardware resources?",
+        "answer": "Operating system",
+        "options": [
+            "Operating system",
+            "Utility program",
+            "Operating system",
+            "Application software"
+        ]
+    },
+    {
+        "numb": 5,
+        "question": "_____________is a type of system software allows that allow a user to perform  maintenance-type tasks?",
+        "answer": "Utility program",
+        "options": [
+            "Operating system",
+            "Application software",
+            "Utility program",
+            "System Software"
+        ]
+    },
+    {
+        "numb": 6,
+        "question": "There are four(4) types of operating system",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 7,
+        "question": "________ is an embedded operating system resides on a ROM chip on a mobile device or consumer electronic device?",
+        "answer": "Mobile OS",
+        "options": [
+            "Stand-alone OS",
+            "Server OS",
+            "Mobile OS",
+            "Free OS"
+        ]
+    },
+    {
+        "numb": 8,
+        "question": "Process of restarting a computer or  mobile devices while it remains powered on",
+        "answer": "Warm boot",
+        "options": [
+            "Warm boot",
+            "Cold boot"
+        ]
+    },
+    {
+        "numb": 9,
+        "question": "The OS provides a platform that enables what to be run?",
+        "answer": "Applications",
+        "options": [
+            "Applications",
+            "Cache",
+            "Hardware",
+            "Processes"
+        ]
+    },
+    {
+        "numb": 10,
+        "question": "What type of account is created automatically when Windows is installed on a computer?",
+        "answer": "Administrator account",
+        "options": [
+            "Standard user account",
+            "Administrator account",
+            "System administrator account",
+            "Guest account"
+        ]
+    },
+    {
+        "numb": 11,
+        "question": " Which of the following operating systems is free and open-source?",
+        "answer": "Linux",
+        "options": [
+            "Windows",
+            "UNIX",
+            "Linux",
+            "Mac OS X"
+        ]
+    },
+    {
+        "numb": 12,
+        "question": "The following is not a function of an operating system:",
+        "answer": "Checking for viruses",
+        "options": [
+            "Directing information from peripheral devices like a mouse or a printer",
+            "Checking for viruses",
+            "Allowing users to open applications",
+            "Allocating the computer's memory between different tasks."
+        ]
+    },
+    {
+        "numb": 13,
+        "question": "Icons, menus and windows are part of:",
+        "answer": "Graphical user interface",
+        "options": [
+            "Graphics or games packages",
+            "System security",
+            "Applications and user files",
+            "Graphical user interface"
+        ]
+    },
+    {
+        "numb": 14,
+        "question": "The following is not a part of GUI:",
+        "answer": "command prompt",
+        "options": [
+            "scroll bar",
+            "command prompt",
+            "radio button",
+            "text box"
+        ]
+    },
+    {
+        "numb": 15,
+        "question": "Only personal computers need operating systems, not mobile phones or robots.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 16,
+        "question": "Operating system is a set of programs that connects and manages software with ________",
+        "answer": "Hardware",
+        "options": [
+            "System",
+            "User",
+            "Hardware",
+            "Application"
+        ]
+    },
+    {
+        "numb": 17,
+        "question": " Which of these devices can have an MULTI-TASKING operating system?",
+        "answer": "Laptop",
+        "options": [
+            "Simple mobile phone",
+            "Microwave oven",
+            "Playstation 4",
+            "Laptop"
+        ]
+    },
+    {
+        "numb": 18,
+        "question": "Which of these devices can have an MULTI USER operating system?",
+        "answer": "Mainframe",
+        "options": [
+            "Smartphone",
+            "Mainframe",
+            "Simple mobile phone",
+            "Personal computer"
+        ]
+    },
+    {
+        "numb": 19,
+        "question": " Which of these devices can have an REAL TIME operating system?",
+        "answer": "Tesla car",
+        "options": [
+            "Tesla car",
+            "Gaming console",
+            "Server",
+            "ATM"
+        ]
+    },
+    {
+        "numb": 20,
+        "question": "Which of these devices can have an BATCH operating system?",
+        "answer": "ATM",
+        "options": [
+            "Gaming console",
+            "Server",
+            "ATM",
+            "Tesla car"
+        ]
+    },
+    {
+        "numb": 21,
+        "question": "what are operaing systems?",
+        "answer": "Software",
+        "options": [
+            "Hardware",
+            "Software"
+        ]
+    },
+    {
+        "numb": 22,
+        "question": "_________ runs external devices",
+        "answer": "device drivers",
+        "options": [
+            "device runners",
+            "device drivers",
+            "device instructors"
+        ]
+    },
+    {
+        "numb": 23,
+        "question": "Why is it important to keep the operating system up to date?",
+        "answer": "To protect your computer form malware",
+        "options": [
+            "To protect your computer form malware",
+            "To impress your friends",
+            "Because it's the law",
+            "To avoid buying a new one"
+        ]
+    },
+    {
+        "numb": 24,
+        "question": "Hardware is different from software because....",
+        "answer": "you can see hardware",
+        "options": [
+            "it costs more",
+            "a computer doesn't need software to work",
+            "hardware needs a person to make it work",
+            "you can see hardware"
+        ]
+    },
+    {
+        "numb": 25,
+        "question": " A computer needs both hardware and software to work",
+        "answer": "True",
+        "options": [
+            "False",
+            "True"
+        ]
+    },
+    {
+        "numb": 26,
+        "question": "Smart phones don't need operating systems, only computers do.",
+        "answer": "False",
+        "options": [
+            "False",
+            "True"
+        ]
+    },
+    {
+        "numb": 27,
+        "question": "One of the capabilities of operating systems: Two or more users have individual accounts that allow them to work with programs and peripheral devices at the same time",
+        "answer": "Multi-user",
+        "options": [
+            "multitasking",
+            "multiprocessing ",
+            "Multi-user",
+            "multithreading"
+        ]
+    },
+    {
+        "numb": 28,
+        "question": "A user interface made up of a command prompt is called: ",
+        "answer": "Command Line Interface",
+        "options": [
+            "Command User Interface",
+            "Command Line Interface",
+            "Graphical User Interface",
+            "Super User Interface"
+        ]
+    },
+    {
+        "numb": 29,
+        "question": "When does BIOS run?",
+        "answer": "Runs before Windows loads",
+        "options": [
+            "Runs after you log in",
+            "Runs before you shut down",
+            "Runs before Windows loads",
+            "Runs after Windows loads"
+        ]
+    },
+    {
+        "numb": 30,
+        "question": "The operating system is held.....",
+        "answer": "in permanent storage and loaded into RAM when the computer is booted up",
+        "options": [
+            "in permanent storage and loaded into RAM when the computer is booted up",
+            "in the boot up program",
+            "in the loader program"
+        ]
+    }
+]

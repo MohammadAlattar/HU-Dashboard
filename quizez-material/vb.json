@@ -1,0 +1,289 @@
+[
+    {
+        "numb": 1,
+        "question": "  The Visual Basic Code Editor will automatically detect certain types of errors as you are entering code.? ",
+        "answer": " True",
+        "options": [
+            "True",
+            "False"
+            
+        ]
+    },
+    {
+        "numb": 2,
+        "question": "Keywords are also referred to as reserved words ?",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+            
+        ]
+    },
+    {
+        "numb": 3,
+        "question": " When the user clicks a button, _________ is triggered?",
+        "answer": "an event",
+        "options": [
+            "an event",
+            "a method",
+            "a setting",
+            "a property"
+        ]
+    },
+    {
+        "numb": 4,
+        "question": "What property of controls tells the order they receive the focus when the tab key is pressed during run time?",
+        "answer": "Tab index ",
+        "options": [
+            "Focus order",
+            "Focus number",
+            "Tab index",
+            "Control order"
+        ]
+    },
+    {
+        "numb": 5,
+        "question": "Sizing Handles make it very easy to resize virtually any control when developing applications with Visual Basic. When working in the Form Designer, how are these sizing handles displayed?",
+        "answer": "A rectangle with small squares around your control.",
+        "options": [
+            "A 3-D outline around your control.",
+            "A rectangle with small squares around your control.",
+            "A rectangle with 4 arrows, one in each corner, around your control. ",
+            "None of the above."
+        ]
+    },
+    {
+        "numb": 6,
+        "question": "When creating a new application in Visual Basic, you are asked to supply a name for the program. If you do not specify a name, a default name is XXXXX XXXXX is this default name?",
+        "answer": "C+B",
+        "options": [
+            "Wapplication followed by a number. ",
+            "Application followed by a number",
+			"WindowsApplication.",
+            "C+B"
+        ]
+    },
+    {
+        "numb": 7,
+        "question": "Which of the properties in a control’s list of properties is used to give the control a meaningful name?",
+        "answer": "Name",
+        "options": [
+            "Text",
+            "ContextMenu",
+            "ControlName",
+            "Name"
+        ]
+    },
+    {
+        "numb": 8,
+        "question": "Pseudocode is? ",
+        "answer": "a description of an algorithm similar to a computer language.",
+        "options": [
+            "data that have been encoded for security.",
+            "a description of an algorithm similar to a computer language.",
+			"a program that doesn’t work.",
+            "the incorrect results of a computer program."
+        ]
+    },
+    {
+        "numb": 9,
+        "question": " The value returned by InputBox is a string.?",
+        "answer": "True",
+        "options": [
+           "True",
+           "False"
+        ]
+    },
+    {
+        "numb": 10,
+        "question": "A variable declared outside of an event procedure is said to have class-level scope.?",
+        "answer": "True",
+        "options": [
+           "True",
+           "False"
+        ]
+    },
+    {
+        "numb": 11,
+        "question": " What is the correct statement when declaring and assigning the value of 100 to an Integer variable called numPeople?",
+        "answer": "Dim numPeople As Integer = 100 ",
+        "options": [
+            "Dim numPeople =",
+            "Dim numPeople = Int(100) ",
+            "numPeople = 100",
+            "Dim numPeople As Integer = 100 "
+        ]
+    },
+    {
+        "numb": 12,
+        "question": "What value will be assigned to the numeric variable x when the following statement is executed? x = 2 + 3 * 4",
+        "answer": "14",
+        "options": [
+            "28",
+            "22",
+            "14",
+            "228"
+        ]
+    },
+    {
+        "numb": 13,
+        "question": "Which of the following is a valid name for a variable?",
+        "answer": "Two_One",
+        "options": [
+            "Two_One",
+            "2One",
+            "Two One",
+            "Two.One"
+        ]
+    },
+    {
+        "numb": 14,
+        "question": "Keywords in Visual Basic are words that",
+        "answer": "have special meaning and should not be used when naming variables",
+        "options": [
+            "should be used when naming variables",
+            "are used to name controls, such as TextBox1, Command2, etc",
+            "have special meaning and should not be used when naming variables",
+            "are used as prefixes for control names (such as txt, btn, lbl, and lst)"
+        ]
+    },
+    {
+        "numb": 15,
+        "question": "What is the proper syntax when using a message dialog box? .",
+        "answer": "MessageBox.Show(“Hi there”, “Hi”)",
+        "options": [
+            "MessageBox.Show(“Hi there”, “Hi”)",
+            "MessageBox.Show(Hi there, Hi) ",
+			"MessageBox.Show “Hi There”, “Hi”",
+            "MessageBox.Show Hi There, Hi"
+        ]
+    },
+    {
+        "numb": 16,
+        "question": "What will be the output of the following statement? txtBox.Text = FormatCurrency(1234.567)?",
+        "answer": "$1,234.57",
+        "options": [
+            "$1234.567",
+            "1,234.57",
+            "$1234.57",
+            "$1,234.57"
+        ]
+    },
+    {
+        "numb": 17,
+        "question": "The following lines of code are correct. If age >= 13 And < 20 Then txtOutput.Text = “You are a teenager.” End If? ",
+        "answer": "False",
+        "options": [
+           "True",
+           "False"
+        ]
+    },
+    {
+        "numb": 18,
+        "question": "Given that x = 7, y = 2, and z = 4, the following If block will display “TRUE”. If (x > y) Or (y > z) Then txtBox.Text = “TRUE” End If?",
+        "answer": "True",
+        "options": [
+           "True",
+           "False"
+        ]
+    },
+    {
+        "numb": 19,
+        "question": "Asc(“A”) is 65. What is Asc(“C”)??",
+        "answer": "68 ",
+        "options": [
+            "66",
+            "67  ",
+            "68",
+            "79 "
+        ]
+    },
+    {
+        "numb": 20,
+        "question": "Asc(“A”) is 65. What is displayed by txtBox.Text = Chr(65) & “BC”?",
+        "answer": "ABC",
+        "options": [
+            "ABC",
+            "A BC",
+            "656667",
+            "Not enough information is available"
+        ]
+    },
+    {
+        "numb": 21,
+        "question": "Which of the following expressions has as its value the words “Hello World? surrounded by quotation marks?",
+        "answer": "data sheet",
+        "options": [
+            "work sheet",
+            "chart sheet",
+			"module sheet",
+            "data sheet"
+        ]
+    },
+    {
+        "numb": 22,
+        "question": "When a range is selected, how can you activate the previous cell?",
+        "answer": "“Hello World”",
+        "options": [
+            "“Hello World”",
+            "Chr(34) & “Hello World”",
+            "Chr(34) & Hello World & Chr(34)",
+			"Chr(34) & “Hello World” & Chr(34)"
+        ]
+    },
+    {
+        "numb": 23,
+        "question": "Which of the following is a valid Visual Basic conditional statement?",
+        "answer": "(2 < n) Or (n < 5)",
+        "options": [
+            "2 < n < 5",
+            "2 < n Or < 5 ",
+            "2 < n Or 5 ",
+            "(2 < n) Or (n < 5)"
+        ]
+    },
+    {
+        "numb": 24,
+        "question": "The three main logical operators are ________, _________, and ________.",
+        "answer": "And, Or, Not ",
+        "options": [
+            "And, Or, Not ",
+            "And, Not, If",
+            "Or, Not, If",
+            "False, And, True"
+        ]
+    },
+    {
+        "numb": 25,
+        "question": "Which value for x would make the following condition true: (x >= 5) And (x <= 6)",
+        "answer": " B+C",
+        "options": [
+            "x is equal to 7",
+            "x is equal to 5",
+			"x is equal to 5.001",
+            "B+C"
+        ]
+    },
+    {
+        "numb": 26,
+        "question": "Suppose that the selector in a Select Case block is the string variable myVar. Which of the following is NOT a valid Case clause?",
+        "answer": "Case myVar.Length",
+        "options": [
+            "Case “Adams”",
+            "Case “739”",
+			"Case (myVar.Substring(0, 1)",
+            "Case myVar.Length"
+        ]
+    },
+    {
+        "numb": 27,
+        "question": "Which Case clause will be true whenever the value of the selector in a Select Case block is greater than or equal to 7?",
+        "answer": "Case Is >= 7",
+        "options": [
+            "Case Is >7",
+            "Case Is = 8 ",
+            "Case Is >= 7",
+            "Case Is <= 8"
+        ]
+    }
+   ]

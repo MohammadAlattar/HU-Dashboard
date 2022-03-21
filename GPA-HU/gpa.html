@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script type="text/javascript">
+        if (typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = { "required": ["jquery2.js", "museutils.js", "jquery.watch.js", "grade.css"], "outOfDate": [] };
+    </script>
+
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+    <title>GPA-HU</title>
+
+    <script type="text/javascript">
+        document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
+    </script>
+
+
+    <link href="dot.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+    </div>
+    <div class=" verticalspacer">
+    </div>
+
+
+
+
+    <table>
+        <tbody>
+            <tr>
+                <td style="text-align: center;">
+                    <div dir="rtl" align="right">
+                        <div align=right dir=rtl>
+                            <script type="text/javascript">
+
+                                //------------------------------------------------------------------
+                                function validate_CurrCumulaGPA(CurrCumulaGPA, alertscript)
+                                //  check for valid numeric strings 
+                                {
+                                    var strValidChars = "0123456789.";
+                                    var strChar;
+                                    var blnResult = true;
+
+                                    if (CurrCumulaGPA.length == 0) return false;
+
+                                    //  test CurrCumulaGPA consists of valid characters listed above
+                                    for (i = 0; i < CurrCumulaGPA.length && blnResult == true; i++) {
+                                        strChar = CurrCumulaGPA.charAt(i);
+                                        if (strValidChars.indexOf(strChar) == -1) {
+                                            alert("الرجاء ادخال المعدل التراكمي السابق");
+                                            document.RequiredData.CurrCumulaGPA.select();
+                                            blnResult = false;
+                                        }
+                                    }
+                                    return blnResult;
+                                }
+
+
+                                //------------------------------------------------------------------
+                                function validate_WantedGPA(WantedGPA)
+                                //  check for valid numeric strings 
+                                {
+                                    var strValidChars = "0123456789.";
+                                    var strChar;
+                                    var blnResult = true;
+
+                                    if (WantedGPA.length == 0) return false;
+
+                                    //  test WantedGPA consists of valid characters listed above
+                                    for (i = 0; i < WantedGPA.length && blnResult == true; i++) {
+                                        strChar = WantedGPA.charAt(i);
+                                        if (strValidChars.indexOf(strChar) == -1) {
+                                            alert("الرجاء ادخال المعدل التراكمي السابق");
+                                            document.CalculationForm2.WantedCumulGPA.select();
+                                            blnResult = false;
+                                        }
+                                    }
+                                    return blnResult;
+                                }
+
+                                //------------------------------------------------------------------
+                                //checks to see that entered number is valid
+                                function validate_TotCredHrComp() {
+                                    var o = document.RequiredData.TotCredHrComp;
+                                    switch (isInteger(o.value)) {
+                                        case true:
+                                            break;
+                                        case false:
+                                            alert("يجب ادخال قيمة رقم صالح");
+                                            document.RequiredData.TotCredHrComp.select();
+                                            return false;
+                                    }
+                                    return true;
+                                }
+
+                                //------------------------------------------------------------------
+                                //checks to see that entered number is valid
+                                function validate_CurrentCredHrComp() {
+                                    var o = document.CalculationForm2.CurrentCreditHours;
+                                    switch (isInteger(o.value)) {
+                                        case true:
+                                            break;
+                                        case false:
+                                            alert("The value entered for current credit hours is not valid. \n Credit hours must be a number.");
+                                            document.CalculationForm2.CurrentCreditHours.select();
+                                            return false;
+                                    }
+                                    return true;
+                                }
+
+                                //------------------------------------------------------------------
+                                //checks to see that entered number is an integer
+                                function isInteger(s) {
+                                    var i;
+
+                                    if (isEmpty(s))
+                                        if (isInteger.arguments.length == 1) return 0;
+                                        else return (isInteger.arguments[1] == true);
+
+                                    for (i = 0; i < s.length; i++) {
+                                        var c = s.charAt(i);
+
+                                        if (!isDigit(c)) return false;
+                                    }
+
+                                    return true;
+                                }
+                                function isEmpty(s) {
+                                    return ((s == null) || (s.length == 0))
+                                }
+                                function isDigit(c) {
+                                    return ((c >= "0") && (c <= "9"))
+                                }
+
+                                //------------------------------------------------------------------
+                                //controls access to the previous grade field
+                                function enableField(ControlField, ResultField) {
+                                    if (ControlField.value == 1) {
+                                        document.getElementById(ResultField).disabled = false;
+                                        return true;
+                                    }
+                                    else if (ControlField.value == 0) {
+                                        document.getElementById(ResultField).disabled = true;
+                                        return true;
+                                    }
+                                }
+
+                                //------------------------------------------------------------------
+                                //calculates expected gpa based on classes and grades entered
+                                function CalcExpectedCumuGPA(ExpectedCumuGPAField) {
+
+                                    if (validate_CurrCumulaGPA(document.RequiredData.CurrCumulaGPA.value) == 0) {
+                                        document.RequiredData.CurrCumulaGPA.select();
+                                        return false;
+                                    }
+                                    if (validate_TotCredHrComp() == 0) {
+                                        document.RequiredData.TotCredHrComp.select();
+                                        return false;
+                                    }
+
+                                    //variables to us to calculate expected GPA
+                                    var CurrentCumulativeGPA = parseFloat(document.RequiredData.CurrCumulaGPA.value);
+                                    var TotalCreditHoursCompleted = parseFloat(document.RequiredData.TotCredHrComp.value);
+                                    var C1Credits = parseFloat(document.CalculationForm.C1Credits.value);
+                                    var C1AnticipatedGrade = parseFloat(document.CalculationForm.C1AnticipatedGrade.value);
+                                    var C1Repeat = parseFloat(document.CalculationForm.C1Repeat.value);
+                                    var C1PreviousGrade = parseFloat(document.CalculationForm.C1PreviousGrade.value);
+                                    var C2Credits = parseFloat(document.CalculationForm.C2Credits.value);
+                                    var C2AnticipatedGrade = parseFloat(document.CalculationForm.C2AnticipatedGrade.value);
+                                    var C2Repeat = parseFloat(document.CalculationForm.C2Repeat.value);
+                                    var C2PreviousGrade = parseFloat(document.CalculationForm.C2PreviousGrade.value);
+                                    var C3Credits = parseFloat(document.CalculationForm.C3Credits.value);
+                                    var C3AnticipatedGrade = parseFloat(document.CalculationForm.C3AnticipatedGrade.value);
+                                    var C3Repeat = parseFloat(document.CalculationForm.C3Repeat.value);
+                                    var C3PreviousGrade = parseFloat(document.CalculationForm.C3PreviousGrade.value);
+                                    var C4Credits = parseFloat(document.CalculationForm.C4Credits.value);
+                                    var C4AnticipatedGrade = parseFloat(document.CalculationForm.C4AnticipatedGrade.value);
+                                    var C4Repeat = parseFloat(document.CalculationForm.C4Repeat.value);
+                                    var C4PreviousGrade = parseFloat(document.CalculationForm.C4PreviousGrade.value);
+                                    var C5Credits = parseFloat(document.CalculationForm.C5Credits.value);
+                                    var C5AnticipatedGrade = parseFloat(document.CalculationForm.C5AnticipatedGrade.value);
+                                    var C5Repeat = parseFloat(document.CalculationForm.C5Repeat.value);
+                                    var C5PreviousGrade = parseFloat(document.CalculationForm.C5PreviousGrade.value);
+                                    var C6Credits = parseFloat(document.CalculationForm.C6Credits.value);
+                                    var C6AnticipatedGrade = parseFloat(document.CalculationForm.C6AnticipatedGrade.value);
+                                    var C6Repeat = parseFloat(document.CalculationForm.C6Repeat.value);
+                                    var C6PreviousGrade = parseFloat(document.CalculationForm.C6PreviousGrade.value);
+                                    var C7Credits = parseFloat(document.CalculationForm.C7Credits.value);
+                                    var C7AnticipatedGrade = parseFloat(document.CalculationForm.C7AnticipatedGrade.value);
+                                    var C7Repeat = parseFloat(document.CalculationForm.C7Repeat.value);
+                                    var C7PreviousGrade = parseFloat(document.CalculationForm.C7PreviousGrade.value);
+                                    var C8Credits = parseFloat(document.CalculationForm.C8Credits.value);
+                                    var C8AnticipatedGrade = parseFloat(document.CalculationForm.C8AnticipatedGrade.value);
+                                    var C8Repeat = parseFloat(document.CalculationForm.C8Repeat.value);
+                                    var C8PreviousGrade = parseFloat(document.CalculationForm.C8PreviousGrade.value);
+                                    var CourseCreditsSum = 0.0;
+                                    var C1CalculatedQPA = 0.0;
+                                    var C2CalculatedQPA = 0.0;
+                                    var C3CalculatedQPA = 0.0;
+                                    var C4CalculatedQPA = 0.0;
+                                    var C5CalculatedQPA = 0.0;
+                                    var C6CalculatedQPA = 0.0;
+                                    var C7CalculatedQPA = 0.0;
+                                    var C8CalculatedQPA = 0.0;
+                                    var CourseRepeatPoints = 0.0;
+                                    var CourseRepeatCredits = 0.0;
+                                    var CourseCalculatedQPASum = 0.0;
+                                    var CurrentCalculatedQPA = 0.0;
+                                    var AnticipatedGPA = 0.0;
+
+                                    //course methods are broken up into seperate statments to control empty answers, if something is empty, entire course is ignored
+                                    if ((C1Credits != 0) && (C1AnticipatedGrade != -1)) {
+                                        CourseCreditsSum = CourseCreditsSum + C1Credits;
+                                        C1CalculatedQPA = C1Credits * C1AnticipatedGrade;
+                                        CourseCalculatedQPASum = CourseCalculatedQPASum + C1CalculatedQPA;
+                                        if (C1Repeat == 1) {
+                                            if (C1PreviousGrade != -1) {
+                                                CourseRepeatPoints = CourseRepeatPoints + (C1PreviousGrade * C1Credits);
+                                                CourseRepeatCredits = CourseRepeatCredits + C1Credits;
+                                            }
+                                            else {
+                                                alert("A previous grade must be entered for repeat courses.");
+                                                return false;
+                                            }
+                                        }
+                                    }
+
+                                    if ((C2Credits != 0) && (C2AnticipatedGrade != -1)) {
+                                        CourseCreditsSum = CourseCreditsSum + C2Credits;
+                                        C2CalculatedQPA = C2Credits * C2AnticipatedGrade;
+                                        CourseCalculatedQPASum = CourseCalculatedQPASum + C2CalculatedQPA;
+                                        if (C2Repeat == 1) {
+                                            if (C2PreviousGrade != -1) {
+                                                CourseRepeatPoints = CourseRepeatPoints + (C2PreviousGrade * C2Credits);
+                                                CourseRepeatCredits = CourseRepeatCredits + C2Credits;
+                                            }
+                                            else {
+                                                alert("A previous grade must be entered for repeat courses.");
+                                                return false;
+                                            }
+                                        }
+                                    }
+
+
+                                    if ((C3Credits != 0) && (C3AnticipatedGrade != -1)) {
+                                        CourseCreditsSum = CourseCreditsSum + C3Credits;
+                                        C3CalculatedQPA = C3Credits * C3AnticipatedGrade;
+                                        CourseCalculatedQPASum = CourseCalculatedQPASum + C3CalculatedQPA;
+                                        if (C3Repeat == 1) {
+                                            if (C3PreviousGrade != -1) {
+                                                CourseRepeatPoints = CourseRepeatPoints + (C3PreviousGrade * C3Credits);
+                                                CourseRepeatCredits = CourseRepeatCredits + C3Credits;
+                                            }
+                                            else {
+                                                alert("A previous grade must be entered for repeat courses.");
+                                                return false;
+                                            }
+                                        }
+                                    }
+
+
+                                    if ((C4Credits != 0) && (C4AnticipatedGrade != -1)) {
+                                        CourseCreditsSum = CourseCreditsSum + C4Credits;
+                                        C4CalculatedQPA = C4Credits * C4AnticipatedGrade;
+                                        CourseCalculatedQPASum = CourseCalculatedQPASum + C4CalculatedQPA;
+                                        if (C4Repeat == 1) {
+                                            if (C4PreviousGrade != -1) {
+                                                CourseRepeatPoints = CourseRepeatPoints + (C4PreviousGrade * C4Credits);
+                                                CourseRepeatCredits = CourseRepeatCredits + C4Credits;
+                                            }
+                                            else {
+                                                alert("A previous grade must be entered for repeat courses.");
+                                                return false;
+                                            }
+                                        }
+                                    }
+
+                                    if ((C5Credits != 0) && (C5AnticipatedGrade != -1)) {
+                                        CourseCreditsSum = CourseCreditsSum + C5Credits;
+                                        C5CalculatedQPA = C5Credits * C5AnticipatedGrade;
+                                        CourseCalculatedQPASum = CourseCalculatedQPASum + C5CalculatedQPA;
+                                        if (C5Repeat == 1) {
+                                            if (C5PreviousGrade != -1) {
+                                                CourseRepeatPoints = CourseRepeatPoints + (C5PreviousGrade * C5Credits);
+                                                CourseRepeatCredits = CourseRepeatCredits + C5Credits;
+                                            }
+                                            else {
+                                                alert("A previous grade must be entered for repeat courses.");
+                                                return false;
+                                            }
+                                        }
+                                    }
+
+                                    if ((C6Credits != 0) && (C6AnticipatedGrade != -1)) {
+                                        CourseCreditsSum = CourseCreditsSum + C6Credits;
+                                        C6CalculatedQPA = C6Credits * C6AnticipatedGrade;
+                                        CourseCalculatedQPASum = CourseCalculatedQPASum + C6CalculatedQPA;
+                                        if (C6Repeat == 1) {
+                                            if (C6PreviousGrade != -1) {
+                                                CourseRepeatPoints = CourseRepeatPoints + (C6PreviousGrade * C6Credits);
+                                                CourseRepeatCredits = CourseRepeatCredits + C6Credits;
+                                            }
+                                            else {
+                                                alert("A previous grade must be entered for repeat courses.");
+                                                return false;
+                                            }
+                                        }
+                                    }
+
+                                    if ((C7Credits != 0) && (C7AnticipatedGrade != -1)) {
+                                        CourseCreditsSum = CourseCreditsSum + C7Credits;
+                                        C7CalculatedQPA = C7Credits * C7AnticipatedGrade;
+                                        CourseCalculatedQPASum = CourseCalculatedQPASum + C7CalculatedQPA;
+                                        if (C7Repeat == 1) {
+                                            if (C7PreviousGrade != -1) {
+                                                CourseRepeatPoints = CourseRepeatPoints + (C7PreviousGrade * C7Credits);
+                                                CourseRepeatCredits = CourseRepeatCredits + C7Credits;
+                                            }
+                                            else {
+                                                alert("A previous grade must be entered for repeat courses.");
+                                                return false;
+                                            }
+                                        }
+                                    }
+
+                                    if ((C8Credits != 0) && (C8AnticipatedGrade != -1)) {
+                                        CourseCreditsSum = CourseCreditsSum + C8Credits;
+                                        C8CalculatedQPA = C8Credits * C8AnticipatedGrade;
+                                        CourseCalculatedQPASum = CourseCalculatedQPASum + C8CalculatedQPA;
+                                        if (C8Repeat == 1) {
+                                            if (C8PreviousGrade != -1) {
+                                                CourseRepeatPoints = CourseRepeatPoints + (C8PreviousGrade * C8Credits);
+                                                CourseRepeatCredits = CourseRepeatCredits + C8Credits;
+                                            }
+                                            else {
+                                                alert("A previous grade must be entered for repeat courses.");
+                                                return false;
+                                            }
+                                        }
+                                    }
+
+
+
+                                    CurrentCalculatedQPA = CurrentCumulativeGPA * TotalCreditHoursCompleted;
+                                    AnticipatedGPA = (CurrentCalculatedQPA + CourseCalculatedQPASum - CourseRepeatPoints) / (TotalCreditHoursCompleted + CourseCreditsSum - CourseRepeatCredits)
+
+                                    //	alert(AnticipatedGPA);
+                                    //	alert(CurrentCalculatedQPA);
+                                    //	alert(CourseCalculatedQPASum);
+                                    //	alert(CourseRepeatPoints);
+                                    //	alert(TotalCreditHoursCompleted);
+                                    //	alert(CourseCreditsSum);
+                                    //	alert(CourseRepeatCredits);
+
+                                    document.getElementById(ExpectedCumuGPAField).value = AnticipatedGPA.toFixed(3);
+
+                                    return true;
+                                }
+
+
+                                //------------------------------------------------------------------
+                                //calculates expected Term gpa based on classes and grades entered
+                                function CalcExpectedTermGPA(ExpectedCumuGPAField) {
+
+                                    //variables to us to calculate expected GPA
+                                    var CurrentCumulativeGPA = 0.0;
+                                    var TotalCreditHoursCompleted = 0.0;
+                                    var C1Credits = parseFloat(document.CalculationForm.C1Credits.value);
+                                    var C1AnticipatedGrade = parseFloat(document.CalculationForm.C1AnticipatedGrade.value);
+                                    var C1Repeat = parseFloat(document.CalculationForm.C1Repeat.value);
+                                    var C1PreviousGrade = parseFloat(document.CalculationForm.C1PreviousGrade.value);
+                                    var C2Credits = parseFloat(document.CalculationForm.C2Credits.value);
+                                    var C2AnticipatedGrade = parseFloat(document.CalculationForm.C2AnticipatedGrade.value);
+                                    var C2Repeat = parseFloat(document.CalculationForm.C2Repeat.value);
+                                    var C2PreviousGrade = parseFloat(document.CalculationForm.C2PreviousGrade.value);
+                                    var C3Credits = parseFloat(document.CalculationForm.C3Credits.value);
+                                    var C3AnticipatedGrade = parseFloat(document.CalculationForm.C3AnticipatedGrade.value);
+                                    var C3Repeat = parseFloat(document.CalculationForm.C3Repeat.value);
+                                    var C3PreviousGrade = parseFloat(document.CalculationForm.C3PreviousGrade.value);
+                                    var C4Credits = parseFloat(document.CalculationForm.C4Credits.value);
+                                    var C4AnticipatedGrade = parseFloat(document.CalculationForm.C4AnticipatedGrade.value);
+                                    var C4Repeat = parseFloat(document.CalculationForm.C4Repeat.value);
+                                    var C4PreviousGrade = parseFloat(document.CalculationForm.C4PreviousGrade.value);
+                                    var C5Credits = parseFloat(document.CalculationForm.C5Credits.value);
+                                    var C5AnticipatedGrade = parseFloat(document.CalculationForm.C5AnticipatedGrade.value);
+                                    var C5Repeat = parseFloat(document.CalculationForm.C5Repeat.value);
+                                    var C5PreviousGrade = parseFloat(document.CalculationForm.C5PreviousGrade.value);
+                                    var C6Credits = parseFloat(document.CalculationForm.C6Credits.value);
+                                    var C6AnticipatedGrade = parseFloat(document.CalculationForm.C6AnticipatedGrade.value);
+                                    var C6Repeat = parseFloat(document.CalculationForm.C6Repeat.value);
+                                    var C6PreviousGrade = parseFloat(document.CalculationForm.C6PreviousGrade.value);
+                                    var C7Credits = parseFloat(document.CalculationForm.C7Credits.value);
+                                    var C7AnticipatedGrade = parseFloat(document.CalculationForm.C7AnticipatedGrade.value);
+                                    var C7Repeat = parseFloat(document.CalculationForm.C7Repeat.value);
+                                    var C7PreviousGrade = parseFloat(document.CalculationForm.C7PreviousGrade.value);
+                                    var C8Credits = parseFloat(document.CalculationForm.C8Credits.value);
+                                    var C8AnticipatedGrade = parseFloat(document.CalculationForm.C8AnticipatedGrade.value);
+                                    var C8Repeat = parseFloat(document.CalculationForm.C8Repeat.value);
+                                    var C8PreviousGrade = parseFloat(document.CalculationForm.C8PreviousGrade.value);
+                                    var CourseCreditsSum = 0.0;
+                                    var C1CalculatedQPA = 0.0;
+                                    var C2CalculatedQPA = 0.0;
+                                    var C3CalculatedQPA = 0.0;
+                                    var C4CalculatedQPA = 0.0;
+                                    var C5CalculatedQPA = 0.0;
+                                    var C6CalculatedQPA = 0.0;
+                                    var C7CalculatedQPA = 0.0;
+                                    var C8CalculatedQPA = 0.0;
+                                    var CourseRepeatPoints = 0.0;
+                                    var CourseRepeatCredits = 0.0;
+                                    var CourseCalculatedQPASum = 0.0;
+                                    var CurrentCalculatedQPA = 0.0;
+                                    var AnticipatedGPA = 0.0;
+
+                                    //course methods are broken up into seperate statments to control empty answers, if something is empty, entire course is ignored
+                                    if ((C1Credits != 0) && (C1AnticipatedGrade != -1)) {
+                                        CourseCreditsSum = CourseCreditsSum + C1Credits;
+                                        C1CalculatedQPA = C1Credits * C1AnticipatedGrade;
+                                        CourseCalculatedQPASum = CourseCalculatedQPASum + C1CalculatedQPA;
+                                    }
+
+                                    if ((C2Credits != 0) && (C2AnticipatedGrade != -1)) {
+                                        CourseCreditsSum = CourseCreditsSum + C2Credits;
+                                        C2CalculatedQPA = C2Credits * C2AnticipatedGrade;
+                                        CourseCalculatedQPASum = CourseCalculatedQPASum + C2CalculatedQPA;
+                                    }
+
+
+                                    if ((C3Credits != 0) && (C3AnticipatedGrade != -1)) {
+                                        CourseCreditsSum = CourseCreditsSum + C3Credits;
+                                        C3CalculatedQPA = C3Credits * C3AnticipatedGrade;
+                                        CourseCalculatedQPASum = CourseCalculatedQPASum + C3CalculatedQPA;
+                                    }
+
+
+                                    if ((C4Credits != 0) && (C4AnticipatedGrade != -1)) {
+                                        CourseCreditsSum = CourseCreditsSum + C4Credits;
+                                        C4CalculatedQPA = C4Credits * C4AnticipatedGrade;
+                                        CourseCalculatedQPASum = CourseCalculatedQPASum + C4CalculatedQPA;
+                                    }
+
+                                    if ((C5Credits != 0) && (C5AnticipatedGrade != -1)) {
+                                        CourseCreditsSum = CourseCreditsSum + C5Credits;
+                                        C5CalculatedQPA = C5Credits * C5AnticipatedGrade;
+                                        CourseCalculatedQPASum = CourseCalculatedQPASum + C5CalculatedQPA;
+                                    }
+
+                                    if ((C6Credits != 0) && (C6AnticipatedGrade != -1)) {
+                                        CourseCreditsSum = CourseCreditsSum + C6Credits;
+                                        C6CalculatedQPA = C6Credits * C6AnticipatedGrade;
+                                        CourseCalculatedQPASum = CourseCalculatedQPASum + C6CalculatedQPA;
+                                    }
+
+                                    if ((C7Credits != 0) && (C7AnticipatedGrade != -1)) {
+                                        CourseCreditsSum = CourseCreditsSum + C7Credits;
+                                        C7CalculatedQPA = C7Credits * C7AnticipatedGrade;
+                                        CourseCalculatedQPASum = CourseCalculatedQPASum + C7CalculatedQPA;
+                                    }
+
+                                    if ((C8Credits != 0) && (C8AnticipatedGrade != -1)) {
+                                        CourseCreditsSum = CourseCreditsSum + C8Credits;
+                                        C8CalculatedQPA = C8Credits * C8AnticipatedGrade;
+                                        CourseCalculatedQPASum = CourseCalculatedQPASum + C8CalculatedQPA;
+                                    }
+
+                                    CurrentCalculatedQPA = CurrentCumulativeGPA * TotalCreditHoursCompleted;
+                                    AnticipatedGPA = (CurrentCalculatedQPA + CourseCalculatedQPASum - CourseRepeatPoints) / (TotalCreditHoursCompleted + CourseCreditsSum - CourseRepeatCredits)
+
+                                    document.getElementById(ExpectedCumuGPAField).value = AnticipatedGPA.toFixed(3);
+
+                                    return true;
+                                }
+
+
+                                //------------------------------------------------------------------
+                                //calculates needed gpa during semester to obtain a certain cumulative gpa
+                                function CalcNeededGPA(NeededGPAField) {
+                                    var CurrentCumulativeGPA = parseFloat(document.RequiredData.CurrCumulaGPA.value);
+                                    var TotalCreditHoursCompleted = parseFloat(document.RequiredData.TotCredHrComp.value);
+                                    var CurrentCreditHoursTaking = parseFloat(document.CalculationForm2.CurrentCreditHours.value);
+                                    var WantedCumulGPA = parseFloat(document.CalculationForm2.WantedCumulGPA.value);
+                                    var CurrentCalculatedQPA = 0.0;
+                                    var CurrentCalculatedQPA = 0.0;
+                                    var NeededGPAVal = 0.0;
+
+                                    if (validate_CurrCumulaGPA(document.RequiredData.CurrCumulaGPA.value) == 0) {
+                                        document.RequiredData.CurrCumulaGPA.select();
+                                        return false;
+                                    }
+                                    if (validate_TotCredHrComp() == 0) {
+                                        document.RequiredData.TotCredHrComp.select();
+                                        return false;
+                                    }
+                                    if (validate_WantedGPA(document.CalculationForm2.WantedCumulGPA.value) == 0) {
+                                        document.CalculationForm2.WantedCumulGPA.select();
+                                        return false;
+                                    }
+                                    if (validate_CurrentCredHrComp() == 0) {
+                                        document.CalculationForm2.CurrentCreditHours.select();
+                                        return false;
+                                    }
+
+                                    CurrentCalculatedQPA = CurrentCumulativeGPA * TotalCreditHoursCompleted;
+
+                                    NeededGPAVal = (((TotalCreditHoursCompleted + CurrentCreditHoursTaking) * WantedCumulGPA) - CurrentCalculatedQPA) / CurrentCreditHoursTaking;
+
+                                    document.getElementById(NeededGPAField).value = NeededGPAVal.toFixed(3);
+
+                                    return true;
+                                }
+
+                                                        //-->
+                            </script>
+
+
+
+
+
+
+
+
+
+
+                            <form name="RequiredData" method="post" action="https://www.icivil-hu.com/grade1">
+
+
+
+
+                                <table class="tabe2">
+                                    <tr>
+
+                                        <td>
+                                            <ul type="circle">
+                                                <li>
+                                                    <div class="l1">المعدل التراكمي السابق:&nbsp;&nbsp;</div>
+                                                    <input class="l4" name="CurrCumulaGPA" id="CurrCumulaGPA"
+                                                        value="0.000" maxlength="5" onclick="this.value = '';"
+                                                        onkeyup="return validate_CurrCumulaGPA(this.value)" tabindex="1"
+                                                        size="15" type="Text">
+                                                </li>
+                                                <li>
+                                                    <div class="l2">عدد الساعات المقطوعة السابقة:&nbsp;&nbsp;</div>
+                                                    <input class="l3" name="TotCredHrComp" id="TotCredHrComp"
+                                                        value="000" maxlength="3" onclick="this.value = '';"
+                                                        onkeyup="return validate_TotCredHrComp()" tabindex="2" size="15"
+                                                        type="Text">
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
+
+
+    <form name="CalculationForm" method="post" action="">
+        <div class="filter">
+
+
+            <table class="tabe1">
+                <tbody>
+                    <tr>
+
+                        <td colspan="5" class="bhh">حسآب المعدل</td>
+                    </tr>
+
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>عدد ساعات المادة</th>
+                        <th>العلامة المتوقعة</th>
+                        <th>هل المادة معادة ؟</th>
+                        <th>العلامة السابقة</th>
+                    </tr>
+                    <tr>
+                        <td><input class="xss" value="المادة 1" size="10" type="text"></td>
+                        <td align="center">
+                            <select class="select" name="C1Credits" id="C1Credits">
+                                <option value="0" selected="">&nbsp; </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="inputMarks" name="C1AnticipatedGrade" id="C1AnticipatedGrade">
+                                <option value="-1" selected="">&nbsp; </option>
+                                <option value="4.00">A+</option>
+                                <option value="3.75">A</option>
+                                <option value="3.50">A-</option>
+                                <option value="3.25">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.75">B-</option>
+                                <option value="2.50">C+</option>
+                                <option value="2.25">C</option>
+                                <option value="2.00">C-</option>
+                                <option value="1.75">D+</option>
+                                <option value="1.50">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="grade" name="C1Repeat" id="C1Repeat"
+                                onchange="return enableField(C1Repeat, 'C1PreviousGrade')">
+                                <option value="0" selected="">لا</option>
+                                <option value="1">نعم</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="gpax" name="C1PreviousGrade" id="C1PreviousGrade" disabled="">
+                                <option value="-1" selected="">&nbsp; </option>
+                                <option value="4.00">A+</option>
+                                <option value="3.75">A</option>
+                                <option value="3.50">A-</option>
+                                <option value="3.25">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.75">B-</option>
+                                <option value="2.50">C+</option>
+                                <option value="2.25">C</option>
+                                <option value="2.00">C-</option>
+                                <option value="1.75">D+</option>
+                                <option value="1.50">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="xss" value="المادة 2" size="10" type="text"></td>
+                        <td align="center">
+                            <select class="select" name="C2Credits" id="C2Credits">
+                                <option value="0" selected="">&nbsp; </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="inputMarks" name="C2AnticipatedGrade" id="C2AnticipatedGrade">
+                                <option value="-1" selected="">&nbsp; </option>
+                                <option value="4.00">A+</option>
+                                <option value="3.75">A</option>
+                                <option value="3.50">A-</option>
+                                <option value="3.25">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.75">B-</option>
+                                <option value="2.50">C+</option>
+                                <option value="2.25">C</option>
+                                <option value="2.00">C-</option>
+                                <option value="1.75">D+</option>
+                                <option value="1.50">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="grade" name="C2Repeat" id="C2Repeat"
+                                onchange="return enableField(C2Repeat, 'C2PreviousGrade')">
+                                <option value="0" selected="">لا</option>
+                                <option value="1">نعم</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="gpax" name="C2PreviousGrade" id="C2PreviousGrade" disabled="">
+                                <option value="-1" selected="">&nbsp; </option>
+                                <option value="4.00">A+</option>
+                                <option value="3.75">A</option>
+                                <option value="3.50">A-</option>
+                                <option value="3.25">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.75">B-</option>
+                                <option value="2.50">C+</option>
+                                <option value="2.25">C</option>
+                                <option value="2.00">C-</option>
+                                <option value="1.75">D+</option>
+                                <option value="1.50">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="xss" value="المادة 3" size="10" type="text"></td>
+                        <td align="center">
+                            <select class="select" name="C3Credits" id="C3Credits">
+                                <option value="0" selected="">&nbsp; </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="inputMarks" name="C3AnticipatedGrade" id="C3AnticipatedGrade">
+                                <option value="-1" selected="">&nbsp; </option>
+                                <option value="4.00">A+</option>
+                                <option value="3.75">A</option>
+                                <option value="3.50">A-</option>
+                                <option value="3.25">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.75">B-</option>
+                                <option value="2.50">C+</option>
+                                <option value="2.25">C</option>
+                                <option value="2.00">C-</option>
+                                <option value="1.75">D+</option>
+                                <option value="1.50">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="grade" name="C3Repeat" id="C3Repeat"
+                                onchange="return enableField(C3Repeat, 'C3PreviousGrade')">
+                                <option value="0" selected="">لا</option>
+                                <option value="1">نعم</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="gpax" name="C3PreviousGrade" id="C3PreviousGrade" disabled="">
+                                <option value="-1" selected="">&nbsp; </option>
+                                <option value="4.00">A+</option>
+                                <option value="3.75">A</option>
+                                <option value="3.50">A-</option>
+                                <option value="3.25">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.75">B-</option>
+                                <option value="2.50">C+</option>
+                                <option value="2.25">C</option>
+                                <option value="2.00">C-</option>
+                                <option value="1.75">D+</option>
+                                <option value="1.50">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="xss" value="المادة 4" size="10" type="text"></td>
+                        <td align="center">
+                            <select class="select" name="C4Credits" id="C4Credits">
+                                <option value="0" selected="">&nbsp; </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="inputMarks" name="C4AnticipatedGrade" id="C4AnticipatedGrade">
+                                <option value="-1" selected="">&nbsp; </option>
+                                <option value="4.00">A+</option>
+                                <option value="3.75">A</option>
+                                <option value="3.50">A-</option>
+                                <option value="3.25">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.75">B-</option>
+                                <option value="2.50">C+</option>
+                                <option value="2.25">C</option>
+                                <option value="2.00">C-</option>
+                                <option value="1.75">D+</option>
+                                <option value="1.50">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="grade" name="C4Repeat" id="C4Repeat"
+                                onchange="return enableField(C4Repeat, 'C4PreviousGrade')">
+                                <option value="0" selected="">لا</option>
+                                <option value="1">نعم</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="gpax" name="C4PreviousGrade" id="C4PreviousGrade" disabled="">
+                                <option value="-1" selected="">&nbsp; </option>
+                                <option value="4.00">A+</option>
+                                <option value="3.75">A</option>
+                                <option value="3.50">A-</option>
+                                <option value="3.25">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.75">B-</option>
+                                <option value="2.50">C+</option>
+                                <option value="2.25">C</option>
+                                <option value="2.00">C-</option>
+                                <option value="1.75">D+</option>
+                                <option value="1.50">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="xss" value="المادة 5" size="10" type="text"></td>
+                        <td align="center">
+                            <select class="select" name="C5Credits" id="C5Credits">
+                                <option value="0" selected="">&nbsp; </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="inputMarks" name="C5AnticipatedGrade" id="C5AnticipatedGrade">
+                                <option value="-1" selected="">&nbsp; </option>
+                                <option value="4.00">A+</option>
+                                <option value="3.75">A</option>
+                                <option value="3.50">A-</option>
+                                <option value="3.25">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.75">B-</option>
+                                <option value="2.50">C+</option>
+                                <option value="2.25">C</option>
+                                <option value="2.00">C-</option>
+                                <option value="1.75">D+</option>
+                                <option value="1.50">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="grade" name="C5Repeat" id="C5Repeat"
+                                onchange="return enableField(C5Repeat, 'C5PreviousGrade')">
+                                <option value="0" selected="">لا</option>
+                                <option value="1">نعم</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="gpax" name="C5PreviousGrade" id="C5PreviousGrade" disabled="">
+                                <option value="-1" selected="">&nbsp; </option>
+                                <option value="4.00">A+</option>
+                                <option value="3.75">A</option>
+                                <option value="3.50">A-</option>
+                                <option value="3.25">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.75">B-</option>
+                                <option value="2.50">C+</option>
+                                <option value="2.25">C</option>
+                                <option value="2.00">C-</option>
+                                <option value="1.75">D+</option>
+                                <option value="1.50">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="xss" value="المادة 6" size="10" type="text"></td>
+                        <td align="center">
+                            <select class="select" name="C6Credits" id="C6Credits">
+                                <option value="0" selected="">&nbsp; </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="inputMarks" name="C6AnticipatedGrade" id="C6AnticipatedGrade">
+                                <option value="-1" selected="">&nbsp; </option>
+                                <option value="4.00">A+</option>
+                                <option value="3.75">A</option>
+                                <option value="3.50">A-</option>
+                                <option value="3.25">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.75">B-</option>
+                                <option value="2.50">C+</option>
+                                <option value="2.25">C</option>
+                                <option value="2.00">C-</option>
+                                <option value="1.75">D+</option>
+                                <option value="1.50">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="grade" name="C6Repeat" id="C6Repeat"
+                                onchange="return enableField(C6Repeat, 'C6PreviousGrade')">
+                                <option value="0" selected="">لا</option>
+                                <option value="1">نعم</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="gpax" name="C6PreviousGrade" id="C6PreviousGrade" disabled="">
+                                <option value="-1" selected="">&nbsp; </option>
+                                <option value="4.00">A+</option>
+                                <option value="3.75">A</option>
+                                <option value="3.50">A-</option>
+                                <option value="3.25">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.75">B-</option>
+                                <option value="2.50">C+</option>
+                                <option value="2.25">C</option>
+                                <option value="2.00">C-</option>
+                                <option value="1.75">D+</option>
+                                <option value="1.50">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="xss" value="المادة 7" size="10" type="text"></td>
+                        <td align="center">
+                            <select class="select" name="C7Credits" id="C7Credits">
+                                <option value="0" selected="">&nbsp; </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="inputMarks" name="C7AnticipatedGrade" id="C7AnticipatedGrade">
+                                <option value="-1" selected="">&nbsp; </option>
+                                <option value="4.00">A+</option>
+                                <option value="3.75">A</option>
+                                <option value="3.50">A-</option>
+                                <option value="3.25">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.75">B-</option>
+                                <option value="2.50">C+</option>
+                                <option value="2.25">C</option>
+                                <option value="2.00">C-</option>
+                                <option value="1.75">D+</option>
+                                <option value="1.50">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="grade" name="C7Repeat" id="C7Repeat"
+                                onchange="return enableField(C7Repeat, 'C7PreviousGrade')">
+                                <option value="0" selected="">لا</option>
+                                <option value="1">نعم</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="gpax" name="C7PreviousGrade" id="C7PreviousGrade" disabled="">
+                                <option value="-1" selected="">&nbsp; </option>
+                                <option value="4.00">A+</option>
+                                <option value="3.75">A</option>
+                                <option value="3.50">A-</option>
+                                <option value="3.25">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.75">B-</option>
+                                <option value="2.50">C+</option>
+                                <option value="2.25">C</option>
+                                <option value="2.00">C-</option>
+                                <option value="1.75">D+</option>
+                                <option value="1.50">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input class="xss" value="المادة 8" size="10" type="text"></td>
+                        <td align="center">
+                            <select class="select" name="C8Credits" id="C8Credits">
+                                <option value="0" selected="">&nbsp; </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="inputMarks" name="C8AnticipatedGrade" id="C8AnticipatedGrade">
+                                <option value="-1" selected=""> &nbsp;</option>
+                                <option value="4.00">A+</option>
+                                <option value="3.75">A</option>
+                                <option value="3.50">A-</option>
+                                <option value="3.25">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.75">B-</option>
+                                <option value="2.50">C+</option>
+                                <option value="2.25">C</option>
+                                <option value="2.00">C-</option>
+                                <option value="1.75">D+</option>
+                                <option value="1.50">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="grade" name="C8Repeat" id="C8Repeat"
+                                onchange="return enableField(C8Repeat, 'C8PreviousGrade')">
+                                <option value="0" selected="">لا</option>
+                                <option value="1">نعم</option>
+                            </select>
+                        </td>
+                        <td align="center">
+                            <select class="gpax" name="C8PreviousGrade" id="C8PreviousGrade" disabled="">
+                                <option value="-1" selected="">&nbsp; </option>
+                                <option value="4.00">A+</option>
+                                <option value="3.75">A</option>
+                                <option value="3.50">A-</option>
+                                <option value="3.25">B+</option>
+                                <option value="3.00">B</option>
+                                <option value="2.75">B-</option>
+                                <option value="2.50">C+</option>
+                                <option value="2.25">C</option>
+                                <option value="2.00">C-</option>
+                                <option value="1.75">D+</option>
+                                <option value="1.50">D</option>
+                                <option value="0.00">F</option>
+                            </select>
+                        </td>
+                    </tr>
+            </table>
+        </div>
+        <table class="tabe3">
+            <tr>
+                <td align="left"><input class="c3" name="Reset" value="امسح" type="Reset"></td>
+                <td colspan="2" align="left">
+                    <input class="c1" name="Calculate" id="Calculate" value="احسب"
+                        onclick="return CalcExpectedTermGPA('ExpectedTermGPA')" type="button"><br>
+                    <input class="c2" name="Calculate" id="Calculate" value="احسب"
+                        onclick="return CalcExpectedCumuGPA('ExpectedCumuGPA')" type="button">
+                </td>
+                <td colspan="1">
+                    <div class="m1"> المعدل الحالي:&nbsp;&nbsp;</div><input class="in1" name="ExpectedTermGPA" size="15"
+                        id="ExpectedTermGPA" readonly="" type="Text"><br>
+                    <div class="m2">المعدل التراكمي:&nbsp;&nbsp;</div>
+                    <input class="m5" name="ExpectedCumuGPA" id="ExpectedCumuGPA" size="15" readonly="" type="Text">
+                </td>
+        </table>
+        </tr>
+        </tbody>
+
+    </form>
+    <div>
+
+        <br><br>
+        <div />
+        <br>
+    </div>
+    </div>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <!-- JS includes -->
+    <script type="text/javascript">
+        if (document.location.protocol != 'https:') document.write('\x3Cscript src=" \jquery2.js" type="text/javascript">\x3C/script>');
+    </script>
+    <script type="text/javascript">
+        window.jQuery || document.write('\x3Cscript src="jquery2.js" type="text/javascript">\x3C/script>');
+    </script>
+    <script src="museutils.js" type="text/javascript"></script>
+    <script src="whatinput.js" type="text/javascript"></script>
+    <script src="jquery.watch.js" type="text/javascript"></script>
+    <!-- Other scripts -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            try {
+                (function () {
+                    var a = {}, b = function (a) { if (a.match(/^rgb/)) return a = a.replace(/\s+/g, "").match(/([\d\,]+)/gi)[0].split(","), (parseInt(a[0]) << 16) + (parseInt(a[1]) << 8) + parseInt(a[2]); if (a.match(/^\#/)) return parseInt(a.substr(1), 16); return 0 }; (function () { $('link[type="text/css"]').each(function () { var b = ($(this).attr("href") || "").match(/\/?css\/([\w\-]+\.css)\?(\d+)/); b && b[1] && b[2] && (a[b[1]] = b[2]) }) })(); (function () {
+                        $("body").append('<div class="version" style="display:none; width:1px; height:1px;"></div>');
+                        for (var c = $(".version"), d = 0; d < Muse.assets.required.length;) {
+                            var f = Muse.assets.required[d], g = f.match(/([\w\-\.]+)\.(\w+)$/), k = g && g[1] ? g[1] : null, g = g && g[2] ? g[2] : null; switch (g.toLowerCase()) {
+                                case "css": k = k.replace(/\W/gi, "_").replace(/^([^a-z])/gi, "_$1"); c.addClass(k); var g = b(c.css("color")), h = b(c.css("background-color")); g != 0 || h != 0 ? (Muse.assets.required.splice(d, 1), "undefined" != typeof a[f] && (g != a[f] >>> 24 || h != (a[f] & 16777215)) && Muse.assets.outOfDate.push(f)) : d++; c.removeClass(k); break; case "js": k.match(/^jquery-[\d\.]+/gi) &&
+                                    typeof $ != "undefined" ? Muse.assets.required.splice(d, 1) : d++; break; default: throw Error("Unsupported file type: " + g);
+                            }
+                        } c.remove(); if (Muse.assets.outOfDate.length || Muse.assets.required.length) c = "Some files on the server may be missing or incorrect. Clear browser cache and try again. If the problem persists please contact website author.", (d = location && location.search && location.search.match && location.search.match(/muse_debug/gi)) && Muse.assets.outOfDate.length && (c += "\nOut of date: " + Muse.assets.outOfDate.join(",")), d && Muse.assets.required.length && (c += "\nMissing: " + Muse.assets.required.join(",")), alert(c)
+                    })()
+                })();/* body */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
+                Muse.Utils.prepHyperlinks(true);/* body */
+                Muse.Utils.fullPage('#page');/* 100% height page */
+                Muse.Utils.showWidgetsWhenReady();/* body */
+                Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
+            } catch (e) { if (e && 'function' == typeof e.notify) e.notify(); else Muse.Assert.fail('Error calling selector function:' + e); }
+        });
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+    <!--HTML Widget code-->
+
+
+</body>
+
+</html>

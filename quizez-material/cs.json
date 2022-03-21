@@ -1,0 +1,298 @@
+[
+    {
+        "numb": 1,
+        "question": "One reason to involve everyone on the software team in the planning activity is to",
+        "answer": "get all team members to “sign up” to the plan",
+        "options": [
+            "adjust the granularity of the plan",
+            "control feature creep",
+            "get all team members to “sign up” to the plan",
+            "understand the problem scope"
+        ]
+    },
+    {
+        "numb": 2,
+        "question": "Project plans should not be changed once they are adopted by a team.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 3,
+        "question": "Requirements models depict software in which three domains?",
+        "answer": "information, function, behavior",
+        "options": [
+            "architecture, interface, component",
+            "cost, risk, schedule",
+            "information, function, behavior",
+            "None of the above"
+        ]
+    },
+    {
+        "numb": 4,
+        "question": "The design model should be traceable to the requirements model?",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 5,
+        "question": "Teams using agile software practices do not generally create models.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 6,
+        "question": "A successful test I ones that discovers at least one as-yet undiscovered error.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 7,
+        "question": "Which of the following are valid reasons for collecting customer feedback concerning delivered software?",
+        "answer": "All of the above",
+        "options": [
+            "Allows developers to make changes to the delivered increment",
+            "Delivery schedule can be revised to reflect changes",
+            "Developers can identify changes to incorporate into next increment",
+            "All of the above"
+        ]
+    },
+    {
+        "numb": 8,
+        "question": "Larger programming teams are always more productive than smaller teams",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 9,
+        "question": "Requirements engineering is a generic process that does not vary from one software project to another.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 10,
+        "question": "A stakeholder is anyone who will purchase the completed software system under development.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 11,
+        "question": "It is relatively common for different customers to propose conflicting requirements, each arguing that his or her version is the right one.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 12,
+        "question": "Non-functional requirements can be safely ignored in modern software development projects.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 13,
+        "question": "Which of the following is not one of the requirement classifications used in Quality Function Deployment (QFD)?",
+        "answer": "mandatory",
+        "options": [
+            "Exciting",
+            "Expected",
+            "mandatory",
+            "normal"
+        ]
+    },
+    {
+        "numb": 14,
+        "question": "User stories are complete descriptions the user needs and include the non-functional requirements for a software increment.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 15,
+        "question": "Developers and customers create use-cases to help the software team understand how different classes of end-users will use functions.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 16,
+        "question": "Use-case actors are always people, never system devices.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 17,
+        "question": "The result of the requirements engineering task is an analysis model that defines which of the following problem domain(s)?",
+        "answer": "all of the above",
+        "options": [
+            "Information",
+            "Functional",
+            "Behavioral",
+            "all of the above"
+        ]
+    },
+    {
+        "numb": 18,
+        "question": "Analysis patterns facilitate the transformation of the analysis model into a design model by suggesting reliable solutions to common problems.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 19,
+        "question": "In agile process models requirements engineering and design activities are interleaved.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 20,
+        "question": "In win-win negotiation, the customer’s needs are met even though the developer’s need may not be.",
+        "answer": "both b and d",
+        "options": [
+            "True",
+            "False"
+         ]
+    },
+   
+    {
+        "numb": 31,
+        "question": "In win-win negotiation, the customer’s needs are met even though the developer’s need may not be.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+
+
+   ]
+    },
+    {
+        "numb": 32,
+        "question": "In requirements validation the requirements model is reviewed to ensure its technical feasibility.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+
+
+ ]
+    },
+    {
+        "numb": 33,
+        "question": "The most common reason for software project failure is lack of functionality.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+           
+
+              
+
+ ]
+    },
+    {
+        "numb": 34,
+        "question": "Object-oriented domain analysis is concerned with the identification and specification of reusable capabilities within an application domain.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+
+ ]
+    },
+    {
+        "numb": 35,
+        "question": "In structured analysis models focus on the structure of the classes defined for a system along with their interactions.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+ ]
+    },
+    {
+        "numb": 36,
+        "question": "Creation and refinement of use cases if an important part of scenario-based modeling.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+ ]
+    },
+    {
+        "numb": 37,
+        "question": "It is important to consider alternative actor interactions when creating a preliminary use case.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+
+ ]
+    },
+    {
+        "numb": 38,
+        "question": "Brainstorming is one technique that may be used to derive a complete set of use case exceptions.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+
+ ]
+    },
+    {
+        "numb": 39,
+        "question": "UML swimnlane diagrams allow you to represent the flow of activities by showing the actors having responsibility for creating each data element.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+
+ ]
+    },
+    {
+        "numb": 40,
+        "question": "In the grammatical parse of a processing narrative the nouns become object candidates in the analysis model.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+
+  ]
+    }
+    
+]
+

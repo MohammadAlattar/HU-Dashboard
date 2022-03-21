@@ -1,0 +1,298 @@
+[
+    {
+        "numb": 1,
+        "question": "Which of these are objectives of Team Software Process?",
+        "answer": "Both b and c",
+        "options": [
+            "Accelerate software process improvement",
+            "Allow better time management by highly trained professionals",
+            "Build self-directed software teams",
+            "Both b and c"
+        ]
+    },
+    {
+        "numb": 2,
+        "question": "Process technology tools allow software organizations to compress schedules by skipping unimportant activities.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 3,
+        "question": "It is generally accepted that one cannot have weak software processes and create high quality end products.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 4,
+        "question": "Agility is nothing more than the ability of a project team to respond rapidly to change.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 5,
+        "question": "Which of the following is not necessary to apply agility to a software process?",
+        "answer": "Eliminate the use of project planning and testing",
+        "options": [
+            "Eliminate the use of project planning and testing",
+            "Uses incremental product delivery strategy",
+            "Only essential work products are produced"
+             
+        ]
+    },
+    {
+        "numb": 6,
+        "question": "How do you create agile processes to manage unpredictability?",
+        "answer": "Both c and d",
+        "options": [
+            "Requirements gathering must be conducted very carefully",
+            "Risk analysis must be conducted before planning takes place",
+            "Software increments must be delivered in short time periods",
+            "Software processes must adapt to changes incrementally",
+            "Both c and d"
+        ]
+    },
+    {
+        "numb": 7,
+        "question": "In agile software processes the highest priorities is to satisfy the customer through early and continuous delivery of valuable software.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 8,
+        "question": "In agile development it is more important to build software that meets the customers’ needs today than worry about features that might be needed in the future.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 9,
+        "question": "What are the four framework activities found in the Extreme Programming (XP) process model?",
+        "answer": "planning, design, coding, testing",
+        "options": [
+            "analysis, design, coding, testing",
+            "planning, analysis, design, coding",
+            "planning, analysis, coding, testing",
+            "planning, design, coding, testing"
+        ]
+    },
+    {
+        "numb": 10,
+        "question": "All agile process models conform to a greater or lesser degree to the principles stated in the “Manifesto for Agile Software Development”.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 11,
+        "question": "Which is not one of the key questions that is answered by each team member at each daily Scrum meeting?",
+        "answer": "What obstacles are you creating?",
+        "options": [
+            "What did you do since the last meeting?",
+            "What obstacles are you creating?",
+            "What is the cause of the problem you are encountering?",
+            "What do you plan to accomplish be the next team meeting?"
+        ]
+    },
+    {
+        "numb": 12,
+        "question": "The Dynamic Systems Development Method (DSDM) suggests a philosophy that is based on the Pareto principle (80% of the application can be delivered in 20% of the time required to build the complete application).",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 13,
+        "question": "Agile Modeling (AM) provides guidance to practitioner during which of these software tasks?",
+        "answer": "Both a and b",
+        "options": [
+            "Analysis",
+            "Design",
+            "Coding",
+            "Testing",
+            "Both a and b"
+        ]
+    },
+    {
+        "numb": 14,
+        "question": "Agile Unified Process uses the classic UP phased activities (inception, elaboration, construction, transition) to help the team visualize the overall process flow.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 15,
+        "question": "Human aspects of software engineering are not relevant in today’s agile process models.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 16,
+        "question": "Which of the following is not an important trait of an effective software engineer?",
+        "answer": "Follows process rule dogmatically",
+        "options": [
+            "Attentive to detail",
+            "Brutally honest",
+            "Follows process rule dogmatically",
+            "Resilient under pressure"
+        ]
+    },
+    {
+        "numb": 17,
+        "question": "Group communication and collaboration are as important as the technical skills of an individual team member to the success of a team.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 18,
+        "question": "Teams with diversity in the individual team member skill sets tend to be more effective than teams without this diversity.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 19,
+        "question": "Which of the following can contribute to team toxicity?",
+        "answer": "a, b, d",
+        "options": [
+            "Frenzied work atmosphere",
+            "Inadequate budget",
+            "Poorly coordinated software process",
+            "Unclear definition of team roles",
+            "a, b, d"
+        ]
+    },
+    {
+        "numb": 20,
+        "question": "Software engineering team structure is independent of problem complexity and size of the expected software products.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 21,
+        "question": "Agile teams are allowed to self-organize and make their own technical decisions.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 22,
+        "question": "In XP a metaphor is used as a device to facilitate communications among customers, team members, and managers?",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 23,
+        "question": "Using an established social media platform negates the need to be concerned about privacy or security.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 24,
+        "question": "Use of cloud services can speed up information sharing among software team members?",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 25,
+        "question": "In collaborative development environments, metrics are used to reward and punish team members.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 26,
+        "question": "Which of these factors complicate decision-making by global software teams",
+        "answer": "All of the above.",
+        "options": [
+            "Complexity of problem",
+            "Different views of the problem",
+            "Law of unintended consequences",
+            "Risk associated with decision",
+            "All of the above."
+        ]
+    },
+    {
+        "numb": 27,
+        "question": "Software engineering principles have about a three year half-life.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 28,
+        "question": "Which of the following is not one of core principles of software engineering practice?",
+        "answer": "Pareto principle (20% of any product requires 80% of the effort).",
+        "options": [
+            "All design should be as simple as possible, but no simpler.",
+            "A software system exists only to provide value to its users.",
+            "Pareto principle (20% of any product requires 80% of the effort).",
+            "Remember that you produce others will consume"
+        ]
+    },
+    {
+        "numb": 29,
+        "question": "Every communication activity should have a facilitator to make sure that the customer is not allowed to dominate the proceedings.",
+        "answer": "False",
+        "options": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "numb": 30,
+        "question": "The agile view of iterative customer communication and collaboration is applicable to all software engineering practice.",
+        "answer": "True",
+        "options": [
+            "True",
+            "False"
+
+   ]
+    }
+   
+]
